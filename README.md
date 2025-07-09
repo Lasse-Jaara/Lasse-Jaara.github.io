@@ -1,3 +1,20 @@
-# Welcome to My Website
+# Lasse-Jaara.github.io
 
-#This is the home of my personal website hosted on GitHub Pages.  
+**Lasse-Jaara.github.io** is a prototype built using **CSS** and **HTML**.
+
+## 🧊 Current Status: Paused
+
+This project was built as a learning exercise to explore new tools, techniques, or game mechanics.
+Development is now Paused, with plans for further updates — but for now it remains available for reference or inspiration.
+
+## 🛠️ Tech Stack
+
+- **CSS**
+- **HTML**
+
+## 🎯 Purpose/Goal
+
+The purpose/goal of this project is to:
+- Experiment with core CSS and HTML
+- Build a testing version for beta 
+- Learn to use/understand **CSS**, **HTML** and how websites works
