@@ -18,3 +18,6 @@ The purpose/goal of this project is to:
 - Experiment with core CSS and HTML
 - Build a testing version for beta 
 - Learn to use/understand **CSS**, **HTML** and how websites works
+
+## 🚀 See the website!
+- https://lasse-jaara.github.io/
