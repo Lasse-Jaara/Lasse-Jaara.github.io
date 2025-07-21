@@ -4,7 +4,7 @@
 
 ## 🧊 Current Status: Paused
 
-This project was built as a learning exercise to explore new tools, techniques, or game mechanics.
+This project was built as a learning exercise to explore new tools and techniques.
 Development is now Paused, with plans for further updates — but for now it remains available for reference or inspiration.
 
 ## 🛠️ Tech Stack
