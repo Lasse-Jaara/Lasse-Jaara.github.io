@@ -1,2 +1,4 @@
 This project uses icons from Ionicons under the MIT License.
 This project uses Lato font from Copyright (c) 2010-2014 by tyPoland Lukasz Dziedzic (team@latofonts.com)
+
+© 2025 Lasse Jaara all rights reserved
