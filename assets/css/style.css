@@ -195,9 +195,14 @@ body {
 }
 .nav-toggle-btn { font-size: 3rem; }
 .nav-toggle-btn .close-icon,
-.nav-toggle-btn.active .menu-icon { display: none; }
+.nav-toggle-btn.active .menu-icon {
+  display: none;
+}
 .nav-toggle-btn.active .close-icon,
-.nav-toggle-btn .menu-icon { display: block; }
+.nav-toggle-btn .menu-icon {
+  display: block;
+  filter: var(--primary-filter);
+}
 .navbar {
   position: absolute;
   top: 65px;
