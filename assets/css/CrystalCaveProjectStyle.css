@@ -163,6 +163,19 @@ body {
 }
 
 /* Disable videos play buttons */
+
+#bgVideo::-moz-media-controls {
+  display: none !important;
+}
+
+#bgVideo::-moz-media-controls-enclosure {
+  display: none !important;
+}
+
+#bgVideo::-moz-media-controls-overlay-play-button {
+  display: none !important;
+}
+
 video::-webkit-media-controls {
   display: none !important;
 }

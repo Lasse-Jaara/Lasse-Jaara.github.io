@@ -59,10 +59,13 @@
 
       <!-- INTRODUCTION -->
       <section class="introduction" id="home">
-        <video id="bgVideo" autoplay loop muted playsinline class="background-video" disablePictureInPicture poster="./assets/images/Loading.png">
-          <source src="assets/videos/CrystalCaveProject/Banner.mp4" type="video/mp4">
-          Your browser does not support the video tag *.mp4.
+
+        <video class="background-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
+          <source src="./assets/videos/CrystalCaveProject/Banner.mp4" 
+          data-optimized="assets/videos/CrystalCaveProject/Banner-optimized.mp4" 
+          type="video/mp4">
         </video>
+
         <div class="introduction-content">
           <h2 class="introduction-title">
             <span>Prototype</span>
@@ -133,87 +136,84 @@
         </div>
       </section>
 
-      <!-- PROJECT VIDEOS -->
-      <section class="section projects">
-        <div class="container">
-          <ul class="project-list">
-            <li>
-              <div class="card-content">
-                <h3 class="h3 card-title">Collecting Crystal</h3>
-                <span class="btn-link">The Crystal heals the player by 10 health point when collected.
-                </span>
-              </div>
-              <div class="project-card">
-                <video id="bgVideo" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
-                  <source src="./assets/videos/CrystalCaveProject/CollectedCrystal.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </li>
+  <!-- PROJECT VIDEOS -->
+  <section class="section projects">
+    <div class="container">
+      <ul class="project-list">
 
-            <li>
-              <div class="card-content">
-                <h3 class="h3 card-title">Getting hit by spike</h3>
-                <span class="btn-link">The spike damages player by 10 health points.
-                </span>
-              </div>
-              <div class="project-card">
-                <video id="bgVideo" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
-                  <source src="./assets/videos/CrystalCaveProject/HittedSpike.mp4"> type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </li>
+        <li>
+          <div class="card-content">
+            <h3 class="h3 card-title">Collecting Crystal</h3>
+            <span class="btn-link">The Crystal heals the player by 10 health point when collected.</span>
+          </div>
+          <div class="project-card">
+            <video class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
+              <source src="./assets/videos/CrystalCaveProject/CollectedCrystal.mp4" 
+                      data-optimized="assets/videos/CrystalCaveProject/CollectedCrystal-optimized.mp4" 
+                      type="video/mp4">
+            </video>
+          </div>
+        </li>
 
-            <li>
-              <div class="card-content">
-                <h3 class="h3 card-title">Double Jumping</h3>
-                <span class="btn-link">
-                  Double jumping allows the player to jump again while in mid-air.<br> It can be used a limited number of times and resets when the player lands on the ground or jumps off a wall.
-                </span>
-              </div>
-              <div class="project-card">
-                <video id="bgVideo" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
-                  <source src="./assets/videos/CrystalCaveProject/DoupleJump.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </li>
+        <li>
+          <div class="card-content">
+            <h3 class="h3 card-title">Getting hit by spike</h3>
+            <span class="btn-link">The spike damages player by 10 health points.</span>
+          </div>
+          <div class="project-card">
+            <video class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
+              <source src="./assets/videos/CrystalCaveProject/HittedSpike.mp4" 
+                      data-optimized="assets/videos/CrystalCaveProject/HittedSpike-optimized.mp4" 
+                      type="video/mp4">
+            </video>
+          </div>
+        </li>
 
-            <li>
-              <div class="card-content">
-                <h3 class="h3 card-title">Wall Jumping</h3>
-                <span class="btn-link">
-                  Wall jumping allows the player to jump off walls. It can be done a limited number<br> of times before needing to touch the ground to reset this ability or double jumping.
-                </span>
-              </div>
-              <div class="project-card">
-                <video id="bgVideo" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
-                  <source src="./assets/videos/CrystalCaveProject/WallJump.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </li>
+        <li>
+          <div class="card-content">
+            <h3 class="h3 card-title">Double Jumping</h3>
+            <span class="btn-link">Double jumping allows the player to jump again while in mid-air. It resets when the player lands or jumps off a wall.</span>
+          </div>
+          <div class="project-card">
+            <video class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
+              <source src="./assets/videos/CrystalCaveProject/DoupleJump.mp4" 
+                      data-optimized="assets/videos/CrystalCaveProject/DoupleJump-optimized.mp4" 
+                      type="video/mp4">
+            </video>
+          </div>
+        </li>
 
-            <li>
-              <div class="card-content">
-                <h3 class="h3 card-title">Enemy</h3>
-                <span class="btn-link">
-                  The enemy moves in its current direction, turning in the opposite direction<br> if it hits an obstacle. It damages the player by 10 health points if the player is in its path.
-                </span>
-              </div>
-              <div class="project-card">
-                <video id="bgVideo" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
-                  <source src="./assets/videos/CrystalCaveProject/Enemy.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </li>
+        <li>
+          <div class="card-content">
+            <h3 class="h3 card-title">Wall Jumping</h3>
+            <span class="btn-link">Wall jumping allows the player to jump off walls. It can be done a limited number of times before resetting.</span>
+          </div>
+          <div class="project-card">
+            <video class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
+              <source src="./assets/videos/CrystalCaveProject/WallJump.mp4" 
+                      data-optimized="assets/videos/CrystalCaveProject/WallJump-optimized.mp4" 
+                      type="video/mp4">
+            </video>
+          </div>
+        </li>
 
+        <li>
+          <div class="card-content">
+            <h3 class="h3 card-title">Enemy</h3>
+            <span class="btn-link">The enemy moves in its current direction and damages the player if in its path.</span>
+          </div>
+          <div class="project-card">
+            <video class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
+              <source src="./assets/videos/CrystalCaveProject/Enemy.mp4" 
+                      data-optimized="assets/videos/CrystalCaveProject/Enemy-optimized.mp4" 
+                      type="video/mp4">
+            </video>
+          </div>
+        </li>
 
-          </ul>
-        </div>
-      </section>
+      </ul>
+    </div>
+  </section>
 
 
   <!-- Contact -->

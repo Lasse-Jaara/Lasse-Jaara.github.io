@@ -45,18 +45,14 @@ window.addEventListener("scroll", function () {
  * video source switcher (desktop vs mobile)
  */
 
-const bgVideo = document.getElementById('bgVideo'); // make sure your <video> has id="bgVideo"
-if (bgVideo) {
-  const source = bgVideo.querySelector('source');
-  if (window.innerWidth <= 768) { // mobile breakpoint
-    source.src = 'assets/videos/CrystalCaveProject/Banner-mobile.mp4';
-    bgVideo.load();
-    bgVideo.play().catch(() => {}); // avoids autoplay errors
-  }
+// Swap all videos to mobile versions if screen width <= 768px
+if (window.innerWidth <= 768) {
+  document.querySelectorAll('video.card-video').forEach(video => {
+    const source = video.querySelector('source');
+    if (source && source.dataset.optimized) {
+      source.src = source.dataset.optimized;  // swap to mobile video
+      video.load();                         // reload video
+      video.play().catch(() => {});         // play, ignore autoplay errors
+    }
+  });
 }
-
-const video = document.getElementById("bgVideo");
-video.muted = true;
-video.play().catch(() => {
-  // fallback if autoplay is blocked
-});
