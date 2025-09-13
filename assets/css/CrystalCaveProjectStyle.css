@@ -314,8 +314,6 @@ body {
 /* ABOUT */
 .about { padding-block-start: 120px; }
 .about-banner {
-  width: 50rem;
-  height: 48rem;
   background-color: var(--bg);
   border-radius: var(--radius-10);
   margin-block-end: 30px;

@@ -40,3 +40,17 @@ window.addEventListener("scroll", function () {
     backTopBtn.classList.remove("active");
   }
 });
+
+/**
+ * video source switcher (desktop vs mobile)
+ */
+
+const bgVideo = document.getElementById('bgVideo'); // make sure your <video> has id="bgVideo"
+if (bgVideo) {
+  const source = bgVideo.querySelector('source');
+  if (window.innerWidth <= 768) { // mobile breakpoint
+    source.src = 'assets/videos/CrystalCaveProject/Banner-mobile.mp4';
+    bgVideo.load();
+    bgVideo.play().catch(() => {}); // avoids autoplay errors
+  }
+}

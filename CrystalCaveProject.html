@@ -30,9 +30,25 @@
 
       <nav class="navbar container">
         <ul class="navbar-list">
-          <li><a href="#home" class="navbar-link-home" data-nav-link>Home</a></li>
-          <li><a href="#about" class="navbar-link" data-nav-link>About game</a></li>
-          <li><a href="#skills" class="navbar-link" data-nav-link>Skills learned</a></li>
+          <li>
+            <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="index.html" class="navbar-link" data-nav-link>About me</a>
+          </li>
+
+          <li>
+            <a href="Skills.html" class="navbar-link" data-nav-link>Skills</a>
+          </li>
+
+          <li>
+            <a href="Projects.html" class="navbar-link" data-nav-link>Projects</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -43,7 +59,7 @@
 
       <!-- INTRODUCTION -->
       <section class="introduction" id="home">
-        <video autoplay loop muted playsinline class="background-video" controls disablePictureInPicture>
+        <video id="bgVideo" autoplay loop muted playsinline class="background-video" disablePictureInPicture poster="./assets/images/Loading.png">
           <source src="assets/videos/CrystalCaveProject/Banner.mp4" type="video/mp4">
           Your browser does not support the video tag *.mp4.
         </video>
@@ -128,7 +144,7 @@
                 </span>
               </div>
               <div class="project-card">
-                <video class="card-video" autoplay muted loop playsinline>
+                <video id="bgVideo" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
                   <source src="./assets/videos/CrystalCaveProject/CollectedCrystal.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
@@ -142,8 +158,8 @@
                 </span>
               </div>
               <div class="project-card">
-                <video class="card-video" autoplay muted loop playsinline>
-                  <source src="./assets/videos/CrystalCaveProject/HittedSpike.mp4" type="video/mp4">
+                <video id="bgVideo" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
+                  <source src="./assets/videos/CrystalCaveProject/HittedSpike.mp4"> type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -157,7 +173,7 @@
                 </span>
               </div>
               <div class="project-card">
-                <video class="card-video" autoplay muted loop playsinline>
+                <video id="bgVideo" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
                   <source src="./assets/videos/CrystalCaveProject/DoupleJump.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
@@ -172,7 +188,7 @@
                 </span>
               </div>
               <div class="project-card">
-                <video class="card-video" autoplay muted loop playsinline>
+                <video id="bgVideo" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
                   <source src="./assets/videos/CrystalCaveProject/WallJump.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
@@ -187,7 +203,7 @@
                 </span>
               </div>
               <div class="project-card">
-                <video class="card-video" autoplay muted loop playsinline>
+                <video id="bgVideo" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
                   <source src="./assets/videos/CrystalCaveProject/Enemy.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
