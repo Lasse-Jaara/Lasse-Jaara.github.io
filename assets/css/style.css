@@ -173,11 +173,11 @@ body {
   width: 100%;
   background-color: var(--bg);
   height: 65px;
-  box-shadow: var(--shadow);
   overflow: hidden;
   transition: 0.25s var(--cubic-out);
   z-index: 4;
   border-bottom: 2px solid var(--border-muted);
+  box-shadow: var(--shadow);
 }
 .header.nav-active {
   height: 335px;
@@ -231,7 +231,7 @@ body {
 
 /* introduction → INTRODUCTION */
 .introduction {
-  background-image: url("../images/banner.png");
+  background-image: url("../images/banner5.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

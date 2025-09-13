@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lasse Jaara - Game Developer from Finland</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./Logo.ico" type="image/svg+xml">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/CrystalCaveProjectStyle.css">
+</head>
+
+<body id="top">
+
+  <!-- HEADER -->
+  <header class="header" data-header>
+    <div class="container">
+      <a href="index.html">
+        <h1 class="logo">Lasse Jaara</h1>
+      </a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+        <img src="./assets/svg/menu-outline.svg" alt="Menu" width="24" height="24" class="menu-icon svg-colored">
+        <img src="./assets/svg/close-outline.svg" alt="Close" width="24" height="24" class="close-icon svg-colored">
+      </button>
+
+      <nav class="navbar container">
+        <ul class="navbar-list">
+          <li><a href="#home" class="navbar-link-home" data-nav-link>Home</a></li>
+          <li><a href="#about" class="navbar-link" data-nav-link>About game</a></li>
+          <li><a href="#skills" class="navbar-link" data-nav-link>Skills learned</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- INTRODUCTION -->
+      <section class="introduction" id="home">
+        <video autoplay loop muted playsinline class="background-video" controls disablePictureInPicture>
+          <source src="assets/videos/CrystalCaveProject/Banner.mp4" type="video/mp4">
+          Your browser does not support the video tag *.mp4.
+        </video>
+        <div class="introduction-content">
+          <h2 class="introduction-title">
+            <span>Prototype</span>
+            <strong>Crystal Cave</strong> 2D Platformer Game
+          </h2>
+          <p class="introduction-text">
+            A game about planning the best route and <br>
+            timing every jump, dash, and climb with precision.
+          </p>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section about" id="about">
+        <div class="container">
+          <div class="about-content">
+            <p class="section-subtitle">About the game</p>
+            <h2 class="h2 section-title">My First Game</h2>
+
+            <div class="game-info">
+              <div class="game-info-item">
+                <span class="game-info-label">Project Genre:</span>
+                <strong>2D Platformer</strong>
+              </div>
+              <div class="game-info-item">
+                <span class="game-info-label">Project Type:</span>
+                <strong>School</strong>
+              </div>
+              <div class="game-info-item">
+                <span class="game-info-label">Project Status:</span>
+                <strong>Archived Prototype</strong>
+              </div>
+              <div class="game-info-item">
+                <span class="game-info-label">Development Time:</span>
+                <strong>3 months</strong>
+              </div>
+              <div class="game-info-item">
+                <span class="game-info-label">Tools Used:</span>
+                <strong>Godot 4+, Pyxel Edit</strong>
+              </div>
+              <div class="game-info-item">
+                <span class="game-info-label">Languages Used:</span>
+                <strong>GDScript</strong>
+              </div>
+              <div class="game-info-item">
+                <span class="game-info-label">Platforms:</span>
+                <strong>Windows</strong>
+              </div>
+              <div class="game-info-item">
+                <span class="game-info-label">Team Size:</span>
+                <strong>Solo</strong>
+              </div>
+            </div>
+
+            <p class="section-text">
+              Crystal Cave is a 2D platformer where the main goal is to escape the cave by completing each level without falling or losing all your health.
+            </p>
+
+            <p class="section-text">
+              The core mechanics include basic movement, running, double jumping, and wall jumping. Both double jumps and wall jumps have limits. These mechanics, combined with carefully designed levels, create challenging and engaging gameplay.
+            </p>
+          
+          </div>
+
+          <figure class="about-banner">
+            <img src="./assets/images/CrystalCaveSmallProject.png" width="800" height="652" loading="lazy" alt="Photo" class="img-cover">
+          </figure>
+        </div>
+      </section>
+
+      <!-- PROJECT VIDEOS -->
+      <section class="section projects">
+        <div class="container">
+          <ul class="project-list">
+            <li>
+              <div class="card-content">
+                <h3 class="h3 card-title">Collecting Crystal</h3>
+                <span class="btn-link">The Crystal heals the player by 10 health point when collected.
+                </span>
+              </div>
+              <div class="project-card">
+                <video class="card-video" autoplay muted loop playsinline>
+                  <source src="./assets/videos/CrystalCaveProject/CollectedCrystal.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </li>
+
+            <li>
+              <div class="card-content">
+                <h3 class="h3 card-title">Getting hit by spike</h3>
+                <span class="btn-link">The spike damages player by 10 health points.
+                </span>
+              </div>
+              <div class="project-card">
+                <video class="card-video" autoplay muted loop playsinline>
+                  <source src="./assets/videos/CrystalCaveProject/HittedSpike.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </li>
+
+            <li>
+              <div class="card-content">
+                <h3 class="h3 card-title">Double Jumping</h3>
+                <span class="btn-link">
+                  Double jumping allows the player to jump again while in mid-air.<br> It can be used a limited number of times and resets when the player lands on the ground or jumps off a wall.
+                </span>
+              </div>
+              <div class="project-card">
+                <video class="card-video" autoplay muted loop playsinline>
+                  <source src="./assets/videos/CrystalCaveProject/DoupleJump.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </li>
+
+            <li>
+              <div class="card-content">
+                <h3 class="h3 card-title">Wall Jumping</h3>
+                <span class="btn-link">
+                  Wall jumping allows the player to jump off walls. It can be done a limited number<br> of times before needing to touch the ground to reset this ability or double jumping.
+                </span>
+              </div>
+              <div class="project-card">
+                <video class="card-video" autoplay muted loop playsinline>
+                  <source src="./assets/videos/CrystalCaveProject/WallJump.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </li>
+
+            <li>
+              <div class="card-content">
+                <h3 class="h3 card-title">Enemy</h3>
+                <span class="btn-link">
+                  The enemy moves in its current direction, turning in the opposite direction<br> if it hits an obstacle. It damages the player by 10 health points if the player is in its path.
+                </span>
+              </div>
+              <div class="project-card">
+                <video class="card-video" autoplay muted loop playsinline>
+                  <source src="./assets/videos/CrystalCaveProject/Enemy.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </li>
+
+
+          </ul>
+        </div>
+      </section>
+
+
+  <!-- Contact -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <p class="section-subtitle">Find the Game</p>
+      <h2 class="h2 section-title">Also, see the game.</h2>
+
+      <div class="Contact-container">
+
+
+        <a href="https://github.com/Lasse-Jaara/Crystal-Cave">
+          <img src="./assets/svg/logo-github.svg" alt="Github" width="30" height="30" class="svg-colored">
+        </a>
+
+        <a href="https://jupresson.itch.io/crystal-cave">
+          <img src="./assets/svg/logo-itchio.svg" alt= "Itchio" width="30" height="30" class="svg-colored">
+        </a>
+
+
+      </div>
+    </div>
+    </section>
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <span class="footer-link">
+          <a href="#" class="footer-link">© 2025 Lasse Jaara all rights reserved</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom JS -->
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
