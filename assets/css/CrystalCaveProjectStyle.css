@@ -162,7 +162,18 @@ body {
   color: var(--highlight);
 }
 
+/* Disable videos play buttons */
+video::-webkit-media-controls {
+  display: none !important;
+}
 
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+}
 
 /* HEADER */
 .header {

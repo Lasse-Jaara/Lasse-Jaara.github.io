@@ -54,3 +54,9 @@ if (bgVideo) {
     bgVideo.play().catch(() => {}); // avoids autoplay errors
   }
 }
+
+const video = document.getElementById("bgVideo");
+video.muted = true;
+video.play().catch(() => {
+  // fallback if autoplay is blocked
+});
