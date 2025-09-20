@@ -12,6 +12,9 @@
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./assets/css/CrystalCaveProjectStyle.css">
+
+  <!-- HLS.js -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 
 <body id="top">
@@ -22,33 +25,17 @@
       <a href="index.html">
         <h1 class="logo">Lasse Jaara</h1>
       </a>
-
       <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
         <img src="./assets/svg/menu-outline.svg" alt="Menu" width="24" height="24" class="menu-icon svg-colored">
         <img src="./assets/svg/close-outline.svg" alt="Close" width="24" height="24" class="close-icon svg-colored">
       </button>
-
       <nav class="navbar container">
         <ul class="navbar-list">
-          <li>
-            <a href="index.html" class="navbar-link" data-nav-link>Home</a>
-          </li>
-
-          <li>
-            <a href="index.html" class="navbar-link" data-nav-link>About me</a>
-          </li>
-
-          <li>
-            <a href="Skills.html" class="navbar-link" data-nav-link>Skills</a>
-          </li>
-
-          <li>
-            <a href="Projects.html" class="navbar-link" data-nav-link>Projects</a>
-          </li>
-
-          <li>
-            <a href="#contact" class="navbar-link" data-nav-link>Contact</a>
-          </li>
+          <li><a href="index.html" class="navbar-link" data-nav-link>Home</a></li>
+          <li><a href="index.html" class="navbar-link" data-nav-link>About me</a></li>
+          <li><a href="Skills.html" class="navbar-link" data-nav-link>Skills</a></li>
+          <li><a href="Projects.html" class="navbar-link" data-nav-link>Projects</a></li>
+          <li><a href="#contact" class="navbar-link" data-nav-link>Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -59,12 +46,16 @@
 
       <!-- INTRODUCTION -->
       <section class="introduction" id="home">
-
-        <video class="background-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
-          <source src="./assets/videos/CrystalCaveProject/Banner.mp4" 
-          data-optimized="assets/videos/CrystalCaveProject/Banner-optimized.mp4" 
-          type="video/mp4">
-        </video>
+        <div class="background-video">
+          <!-- Responsive HLS.js background video -->
+          <video id="bg-video"
+                 autoplay
+                 muted
+                 loop
+                 playsinline
+                 disablePictureInPicture>
+          </video>
+        </div>
 
         <div class="introduction-content">
           <h2 class="introduction-title">
@@ -84,176 +75,155 @@
           <div class="about-content">
             <p class="section-subtitle">About the game</p>
             <h2 class="h2 section-title">My First Game</h2>
-
             <div class="game-info">
-              <div class="game-info-item">
-                <span class="game-info-label">Project Genre:</span>
-                <strong>2D Platformer</strong>
-              </div>
-              <div class="game-info-item">
-                <span class="game-info-label">Project Type:</span>
-                <strong>School</strong>
-              </div>
-              <div class="game-info-item">
-                <span class="game-info-label">Project Status:</span>
-                <strong>Archived Prototype</strong>
-              </div>
-              <div class="game-info-item">
-                <span class="game-info-label">Development Time:</span>
-                <strong>3 months</strong>
-              </div>
-              <div class="game-info-item">
-                <span class="game-info-label">Tools Used:</span>
-                <strong>Godot 4+, Pyxel Edit</strong>
-              </div>
-              <div class="game-info-item">
-                <span class="game-info-label">Languages Used:</span>
-                <strong>GDScript</strong>
-              </div>
-              <div class="game-info-item">
-                <span class="game-info-label">Platforms:</span>
-                <strong>Windows</strong>
-              </div>
-              <div class="game-info-item">
-                <span class="game-info-label">Team Size:</span>
-                <strong>Solo</strong>
-              </div>
+              <div class="game-info-item"><span class="game-info-label">Project Genre:</span><strong>2D Platformer</strong></div>
+              <div class="game-info-item"><span class="game-info-label">Project Type:</span><strong>School</strong></div>
+              <div class="game-info-item"><span class="game-info-label">Project Status:</span><strong>Archived Prototype</strong></div>
+              <div class="game-info-item"><span class="game-info-label">Development Time:</span><strong>3 months</strong></div>
+              <div class="game-info-item"><span class="game-info-label">Tools Used:</span><strong>Godot 4+, Pyxel Edit</strong></div>
+              <div class="game-info-item"><span class="game-info-label">Languages Used:</span><strong>GDScript</strong></div>
+              <div class="game-info-item"><span class="game-info-label">Platforms:</span><strong>Windows</strong></div>
+              <div class="game-info-item"><span class="game-info-label">Team Size:</span><strong>Solo</strong></div>
             </div>
-
             <p class="section-text">
               Crystal Cave is a 2D platformer where the main goal is to escape the cave by completing each level without falling or losing all your health.
             </p>
-
             <p class="section-text">
               The core mechanics include basic movement, running, double jumping, and wall jumping. Both double jumps and wall jumps have limits. These mechanics, combined with carefully designed levels, create challenging and engaging gameplay.
             </p>
-          
           </div>
-
           <figure class="about-banner">
             <img src="./assets/images/CrystalCaveSmallProject.png" width="800" height="652" loading="lazy" alt="Photo" class="img-cover">
           </figure>
         </div>
       </section>
 
-  <!-- PROJECT VIDEOS -->
-  <section class="section projects">
-    <div class="container">
-      <ul class="project-list">
+      <!-- PROJECT VIDEOS -->
+      <section class="section projects">
+        <div class="container">
+          <ul class="project-list">
+            <li>
+              <div class="card-content">
+                <h3 class="h3 card-title">Collecting Crystal</h3>
+                <span class="btn-link">The Crystal heals the player by 10 health point when collected.</span>
+              </div>
+              <div class="project-card">
+                <video id="video-collected-crystal" class="card-video"
+                 autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png" ></video>
+              </div>
+            </li>
+            <li>
+              <div class="card-content">
+                <h3 class="h3 card-title">Getting hit by spike</h3>
+                <span class="btn-link">The spike damages player by 10 health points.</span>
+              </div>
+              <div class="project-card">
+                <video id="video-hitted-spike" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png" ></video>
+              </div>
+            </li>
+            <li>
+              <div class="card-content">
+                <h3 class="h3 card-title">Double Jumping</h3>
+                <span class="btn-link">Double jumping allows the player to jump again while in mid-air. It resets when the player lands or jumps off a wall.</span>
+              </div>
+              <div class="project-card">
+                <video id="video-double-jump" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png" ></video>
+              </div>
+            </li>
+            <li>
+              <div class="card-content">
+                <h3 class="h3 card-title">Wall Jumping</h3>
+                <span class="btn-link">Wall jumping allows the player to jump off walls. It can be done a limited number of times before resetting.</span>
+              </div>
+              <div class="project-card">
+                <video id="video-wall-jump" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png" ></video>
+              </div>
+            </li>
+            <li>
+              <div class="card-content">
+                <h3 class="h3 card-title">Enemy</h3>
+                <span class="btn-link">The enemy moves in its current direction and damages the player if in its path.</span>
+              </div>
+              <div class="project-card">
+                <video id="video-enemy" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png" ></video>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-        <li>
-          <div class="card-content">
-            <h3 class="h3 card-title">Collecting Crystal</h3>
-            <span class="btn-link">The Crystal heals the player by 10 health point when collected.</span>
+      <!-- Contact -->
+      <section class="section contact" id="contact">
+        <div class="container">
+          <p class="section-subtitle">Find the Game</p>
+          <h2 class="h2 section-title">Also, see the game on</h2>
+          <div class="Contact-container">
+            <a href="https://github.com/Lasse-Jaara/Crystal-Cave">
+              <img src="./assets/svg/logo-github.svg" alt="Github" width="30" height="30" class="svg-colored">
+            </a>
+            <a href="https://jupresson.itch.io/crystal-cave">
+              <img src="./assets/svg/logo-itchio.svg" alt="Itchio" width="30" height="30" class="svg-colored">
+            </a>
           </div>
-          <div class="project-card">
-            <video class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
-              <source src="./assets/videos/CrystalCaveProject/CollectedCrystal.mp4" 
-                      data-optimized="assets/videos/CrystalCaveProject/CollectedCrystal-optimized.mp4" 
-                      type="video/mp4">
-            </video>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-links">
+            <span class="footer-link">
+              <a href="#" class="footer-link">© 2025 Lasse Jaara all rights reserved</a>
+            </span>
           </div>
-        </li>
+        </div>
+      </footer>
 
-        <li>
-          <div class="card-content">
-            <h3 class="h3 card-title">Getting hit by spike</h3>
-            <span class="btn-link">The spike damages player by 10 health points.</span>
-          </div>
-          <div class="project-card">
-            <video class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
-              <source src="./assets/videos/CrystalCaveProject/HittedSpike.mp4" 
-                      data-optimized="assets/videos/CrystalCaveProject/HittedSpike-optimized.mp4" 
-                      type="video/mp4">
-            </video>
-          </div>
-        </li>
+      <!-- Custom JS -->
+      <script src="./assets/js/script.js"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          // Background video
+          var bgVideo = document.getElementById('bg-video');
+          var bgHlsSource = "./assets/videos/CrystalCaveProject/Banner_master.m3u8";
+          if (window.Hls && Hls.isSupported()) {
+            var hlsBg = new Hls();
+            hlsBg.loadSource(bgHlsSource);
+            hlsBg.attachMedia(bgVideo);
+            hlsBg.on(Hls.Events.MANIFEST_PARSED, function () {
+              bgVideo.play();
+            });
+          } else if (bgVideo.canPlayType('application/vnd.apple.mpegurl')) {
+            bgVideo.src = bgHlsSource;
+            bgVideo.play();
+          }
 
-        <li>
-          <div class="card-content">
-            <h3 class="h3 card-title">Double Jumping</h3>
-            <span class="btn-link">Double jumping allows the player to jump again while in mid-air. It resets when the player lands or jumps off a wall.</span>
-          </div>
-          <div class="project-card">
-            <video class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
-              <source src="./assets/videos/CrystalCaveProject/DoupleJump.mp4" 
-                      data-optimized="assets/videos/CrystalCaveProject/DoupleJump-optimized.mp4" 
-                      type="video/mp4">
-            </video>
-          </div>
-        </li>
-
-        <li>
-          <div class="card-content">
-            <h3 class="h3 card-title">Wall Jumping</h3>
-            <span class="btn-link">Wall jumping allows the player to jump off walls. It can be done a limited number of times before resetting.</span>
-          </div>
-          <div class="project-card">
-            <video class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
-              <source src="./assets/videos/CrystalCaveProject/WallJump.mp4" 
-                      data-optimized="assets/videos/CrystalCaveProject/WallJump-optimized.mp4" 
-                      type="video/mp4">
-            </video>
-          </div>
-        </li>
-
-        <li>
-          <div class="card-content">
-            <h3 class="h3 card-title">Enemy</h3>
-            <span class="btn-link">The enemy moves in its current direction and damages the player if in its path.</span>
-          </div>
-          <div class="project-card">
-            <video class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png">
-              <source src="./assets/videos/CrystalCaveProject/Enemy.mp4" 
-                      data-optimized="assets/videos/CrystalCaveProject/Enemy-optimized.mp4" 
-                      type="video/mp4">
-            </video>
-          </div>
-        </li>
-
-      </ul>
-    </div>
-  </section>
-
-
-  <!-- Contact -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <p class="section-subtitle">Find the Game</p>
-      <h2 class="h2 section-title">Also, see the game.</h2>
-
-      <div class="Contact-container">
-
-
-        <a href="https://github.com/Lasse-Jaara/Crystal-Cave">
-          <img src="./assets/svg/logo-github.svg" alt="Github" width="30" height="30" class="svg-colored">
-        </a>
-
-        <a href="https://jupresson.itch.io/crystal-cave">
-          <img src="./assets/svg/logo-itchio.svg" alt= "Itchio" width="30" height="30" class="svg-colored">
-        </a>
-
-
-      </div>
-    </div>
-    </section>
-
-
-
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-links">
-        <span class="footer-link">
-          <a href="#" class="footer-link">© 2025 Lasse Jaara all rights reserved</a>
-        </span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Custom JS -->
-  <script src="./assets/js/script.js"></script>
+          // Project videos
+          const videoConfigs = [
+            { id: 'video-collected-crystal', src: './assets/videos/CrystalCaveProject/CollectedCrystal_master.m3u8' },
+            { id: 'video-hitted-spike', src: './assets/videos/CrystalCaveProject/HittedSpike_master.m3u8' },
+            { id: 'video-double-jump', src: './assets/videos/CrystalCaveProject/DoupleJump_master.m3u8' },
+            { id: 'video-wall-jump', src: './assets/videos/CrystalCaveProject/WallJump_master.m3u8' },
+            { id: 'video-enemy', src: './assets/videos/CrystalCaveProject/Enemy_master.m3u8' }
+          ];
+          videoConfigs.forEach(function(cfg) {
+            var video = document.getElementById(cfg.id);
+            if (!video) return;
+            if (window.Hls && Hls.isSupported()) {
+              var hls = new Hls();
+              hls.loadSource(cfg.src);
+              hls.attachMedia(video);
+              hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                video.play();
+              });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+              video.src = cfg.src;
+              video.play();
+            }
+          });
+        });
+      </script>
+    </article>
+  </main>
 </body>
-
 </html>

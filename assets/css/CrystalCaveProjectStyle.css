@@ -162,31 +162,6 @@ body {
   color: var(--highlight);
 }
 
-/* Disable videos play buttons */
-
-#bgVideo::-moz-media-controls {
-  display: none !important;
-}
-
-#bgVideo::-moz-media-controls-enclosure {
-  display: none !important;
-}
-
-#bgVideo::-moz-media-controls-overlay-play-button {
-  display: none !important;
-}
-
-video::-webkit-media-controls {
-  display: none !important;
-}
-
-video::-webkit-media-controls-enclosure {
-  display: none !important;
-}
-
-video::-webkit-media-controls-overlay-play-button {
-  display: none !important;
-}
 
 /* HEADER */
 .header {
@@ -267,7 +242,7 @@ video::-webkit-media-controls-overlay-play-button {
 
 /* introduction → INTRODUCTION */
 .introduction {
-  background-image: url("../images/CrystalCaveProject.jpg");
+  /*background-image: url("../images/CrystalCaveProject.jpg");*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -285,6 +260,21 @@ video::-webkit-media-controls-overlay-play-button {
   z-index: 0;
   pointer-events: none;
 }
+
+.background-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/*.background-video video {
+  animation: fadeBlackThenFadeIn 2s 10s forwards;
+}
+*/
 
 .introduction > *:not(.background-video) {
   position: relative;
@@ -398,7 +388,7 @@ video::-webkit-media-controls-overlay-play-button {
   top: 50%;
   left: 50%;
   width: 100%;
-  height: 100%;
+  height: 60vh;
   object-fit: cover;
   transform: translate(-50%, -50%);
   z-index: 0;

@@ -40,19 +40,3 @@ window.addEventListener("scroll", function () {
     backTopBtn.classList.remove("active");
   }
 });
-
-/**
- * video source switcher (desktop vs mobile)
- */
-
-// Swap all videos to mobile versions if screen width <= 768px
-if (window.innerWidth <= 768) {
-  document.querySelectorAll('video.card-video').forEach(video => {
-    const source = video.querySelector('source');
-    if (source && source.dataset.optimized) {
-      source.src = source.dataset.optimized;  // swap to mobile video
-      video.load();                         // reload video
-      video.play().catch(() => {});         // play, ignore autoplay errors
-    }
-  });
-}
