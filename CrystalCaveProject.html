@@ -48,17 +48,6 @@
       <section class="introduction" id="home">
         <div class="background-video">
           <!-- Responsive HLS.js background video -->
-
-          <h3 style="text-align: center; margin: auto; color: #ffb300; font-size: 1.4rem;">
-            If video takes long to load, please use a PC or laptop.
-          </h3>
-          <video preload="auto" id="bg-video"
-                 autoplay
-                 muted
-                 loop
-                 playsinline
-                 disablePictureInPicture>
-          </video>
         </div>
 
         <div class="introduction-content">
@@ -112,8 +101,7 @@
                 <span class="btn-link">The Crystal heals the player by 10 health point when collected.</span>
               </div>
               <div class="project-card">
-                <video id="video-collected-crystal" class="card-video"
-                 autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png" ></video>
+                  <video id="video-collected-crystal" class="card-video" controls muted poster="./assets/images/CrystalCave/CollectedCrystalPoster.jpg"></video>
               </div>
             </li>
             <li>
@@ -122,7 +110,7 @@
                 <span class="btn-link">The spike damages player by 10 health points.</span>
               </div>
               <div class="project-card">
-                <video id="video-hitted-spike" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png" ></video>
+                  <video id="video-hitted-spike" class="card-video" controls muted poster="./assets/images/CrystalCave/HittedSpikePoster.jpg"></video>
               </div>
             </li>
             <li>
@@ -131,7 +119,7 @@
                 <span class="btn-link">Double jumping allows the player to jump again while in mid-air. It resets when the player lands or jumps off a wall.</span>
               </div>
               <div class="project-card">
-                <video id="video-double-jump" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png" ></video>
+                  <video id="video-double-jump" class="card-video" controls muted poster="./assets/images/CrystalCave/DoupleJumpPoster.jpg"></video>
               </div>
             </li>
             <li>
@@ -140,7 +128,7 @@
                 <span class="btn-link">Wall jumping allows the player to jump off walls. It can be done a limited number of times before resetting.</span>
               </div>
               <div class="project-card">
-                <video id="video-wall-jump" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png" ></video>
+                  <video id="video-wall-jump" class="card-video" controls muted poster="./assets/images/CrystalCave/WallJump.jpg"></video>
               </div>
             </li>
             <li>
@@ -149,7 +137,7 @@
                 <span class="btn-link">The enemy moves in its current direction and damages the player if in its path.</span>
               </div>
               <div class="project-card">
-                <video id="video-enemy" class="card-video" autoplay muted loop playsinline disablePictureInPicture poster="./assets/images/Loading.png" ></video>
+                  <video id="video-enemy" class="card-video" controls muted poster="./assets/images/CrystalCave/EnemyPoster.jpg"></video>
               </div>
             </li>
           </ul>
@@ -185,48 +173,8 @@
 
       <!-- Custom JS -->
       <script src="./assets/js/script.js"></script>
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          // Background video
-          var bgVideo = document.getElementById('bg-video');
-          var bgHlsSource = "./assets/videos/CrystalCaveProject/Banner_master.m3u8";
-          if (window.Hls && Hls.isSupported()) {
-            var hlsBg = new Hls();
-            hlsBg.loadSource(bgHlsSource);
-            hlsBg.attachMedia(bgVideo);
-            hlsBg.on(Hls.Events.MANIFEST_PARSED, function () {
-              bgVideo.play();
-            });
-          } else if (bgVideo.canPlayType('application/vnd.apple.mpegurl')) {
-            bgVideo.src = bgHlsSource;
-            bgVideo.play();
-          }
-
-          // Project videos
-          const videoConfigs = [
-            { id: 'video-collected-crystal', src: './assets/videos/CrystalCaveProject/CollectedCrystal_master.m3u8' },
-            { id: 'video-hitted-spike', src: './assets/videos/CrystalCaveProject/HittedSpike_master.m3u8' },
-            { id: 'video-double-jump', src: './assets/videos/CrystalCaveProject/DoupleJump_master.m3u8' },
-            { id: 'video-wall-jump', src: './assets/videos/CrystalCaveProject/WallJump_master.m3u8' },
-            { id: 'video-enemy', src: './assets/videos/CrystalCaveProject/Enemy_master.m3u8' }
-          ];
-          videoConfigs.forEach(function(cfg) {
-            var video = document.getElementById(cfg.id);
-            if (!video) return;
-            if (window.Hls && Hls.isSupported()) {
-              var hls = new Hls();
-              hls.loadSource(cfg.src);
-              hls.attachMedia(video);
-              hls.on(Hls.Events.MANIFEST_PARSED, function () {
-                video.play();
-              });
-            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-              video.src = cfg.src;
-              video.play();
-            }
-          });
-        });
-      </script>
+      <script src="./assets/js/project-videos.js"></script>
+      
     </article>
   </main>
 </body>

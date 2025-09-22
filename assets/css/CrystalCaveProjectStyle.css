@@ -242,7 +242,7 @@ body {
 
 /* introduction → INTRODUCTION */
 .introduction {
-  /*background-image: url("../images/CrystalCaveProject.jpg");*/
+  background-image: url("../images/CrystalCave/CrystalCaveProject.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -369,29 +369,31 @@ body {
 }
 
 .project-card {
-  position: relative; /* needed for video overlay */
+  position: relative;
   display: block;
-  padding: 180px 40px; /* keeps your text spacing */
+  padding: 40px 40px 20px 40px; /* top, right, bottom, left */
   border-radius: var(--radius-10);
   font-family: var(--ff-Lato);
   color: var(--text);
   font-weight: var(--fw-600);
   transition: var(--transition-2);
-  overflow: hidden; /* ensures video doesn't spill out */
+  overflow: visible; /* allow controls to show */
   text-decoration: none;
-  background-color: var(--bg); /* fallback color */
+  
+  min-height: 320px; /* ensures enough space for video and text */
 }
 
-/* Video background */
 .project-card .card-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: relative;
   width: 100%;
-  height: 60vh;
+  max-width: 600px;
+  height: 300px;
   object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  border-radius: var(--radius-10);
+  z-index: 1;
+  margin: 0 auto;
+  display: block;
+  box-shadow: var(--shadow);
 }
 
 /* Content above video */
