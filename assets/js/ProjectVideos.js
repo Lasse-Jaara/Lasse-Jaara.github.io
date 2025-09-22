@@ -1,17 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Helper to detect iOS
+  function isIOS() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  }
+
   // Background video (autoplays as before)
   var bgVideo = document.getElementById('bg-video');
   var bgHlsSource = "./assets/videos/CrystalCaveProject/Banner_master.m3u8";
-  if (window.Hls && Hls.isSupported()) {
-    var hlsBg = new Hls();
-    hlsBg.loadSource(bgHlsSource);
-    hlsBg.attachMedia(bgVideo);
-    hlsBg.on(Hls.Events.MANIFEST_PARSED, function () {
+  if (bgVideo) {
+    bgVideo.setAttribute('playsinline', '');
+    bgVideo.setAttribute('muted', '');
+    if (window.Hls && Hls.isSupported() && !isIOS()) {
+      var hlsBg = new Hls();
+      hlsBg.loadSource(bgHlsSource);
+      hlsBg.attachMedia(bgVideo);
+      hlsBg.on(Hls.Events.MANIFEST_PARSED, function () {
+        bgVideo.play();
+      });
+    } else if (bgVideo.canPlayType('application/vnd.apple.mpegurl') || isIOS()) {
+      bgVideo.src = bgHlsSource;
       bgVideo.play();
-    });
-  } else if (bgVideo && bgVideo.canPlayType('application/vnd.apple.mpegurl')) {
-    bgVideo.src = bgHlsSource;
-    bgVideo.play();
+    }
   }
 
   // Project videos: load HLS only when play is pressed
@@ -25,16 +34,17 @@ document.addEventListener("DOMContentLoaded", function () {
   videoConfigs.forEach(function(cfg) {
     var video = document.getElementById(cfg.id);
     if (!video) return;
+    video.setAttribute('playsinline', '');
+    video.setAttribute('muted', '');
     var loaded = false;
     video.addEventListener('play', function () {
       if (loaded) return;
-      if (window.Hls && Hls.isSupported()) {
+      if (window.Hls && Hls.isSupported() && !isIOS()) {
         var hls = new Hls();
         hls.loadSource(cfg.src);
         hls.attachMedia(video);
-        // HLS.js will automatically select the best quality and allow switching
         loaded = true;
-      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      } else if (video.canPlayType('application/vnd.apple.mpegurl') || isIOS()) {
         video.src = cfg.src;
         loaded = true;
       }
