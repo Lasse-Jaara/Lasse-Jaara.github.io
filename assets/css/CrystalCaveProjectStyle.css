@@ -393,7 +393,6 @@ body {
   z-index: 1;
   margin: 0 auto;
   display: block;
-  box-shadow: var(--shadow);
 }
 
 /* Content above video */
