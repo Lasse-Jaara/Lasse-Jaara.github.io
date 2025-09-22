@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
   }
 
-  // Project videos: load HLS only when play is pressed
+  // Project videos: load HLS only when play is pressed, and support replay
   const videoConfigs = [
     { id: 'video-collected-crystal', src: './assets/videos/CrystalCaveProject/CollectedCrystal_master.m3u8' },
     { id: 'video-hitted-spike', src: './assets/videos/CrystalCaveProject/HittedSpike_master.m3u8' },
@@ -17,42 +17,53 @@ document.addEventListener("DOMContentLoaded", function () {
     var video = document.getElementById(cfg.id);
     if (!video) return;
 
-    // Ensure playsinline and muted set as both attributes and properties for mobile compatibility
+    // Set attributes and properties for mobile compatibility
     video.setAttribute('playsinline', '');
     video.playsInline = true;
     video.setAttribute('muted', '');
     video.muted = true;
 
-    let loaded = false;
-    let hls = null;
+    video.hlsInstance = null; // Store HLS.js instance per video
 
+    // Always re-initialize on play for replay support
     video.addEventListener('play', function () {
-      if (loaded) return;
+      // Destroy previous HLS.js instance if exists
+      if (video.hlsInstance) {
+        video.hlsInstance.destroy();
+        video.hlsInstance = null;
+      }
 
-      // HLS.js for non-iOS browsers
       if (window.Hls && Hls.isSupported() && !isIOS()) {
-        hls = new Hls();
+        const hls = new Hls();
         hls.loadSource(cfg.src);
         hls.attachMedia(video);
-        loaded = true;
-        // Clean up HLS on pause or end
-        video.addEventListener('pause', function () {
-          if (hls) hls.detachMedia();
-        });
-        video.addEventListener('ended', function () {
-          if (hls) hls.detachMedia();
-        });
-      }
-      // Native HLS for iOS/Safari
-      else if (video.canPlayType('application/vnd.apple.mpegurl') || isIOS()) {
+        video.hlsInstance = hls;
+        video.currentTime = 0; // Start from beginning
+      } else if (video.canPlayType('application/vnd.apple.mpegurl') || isIOS()) {
         video.src = cfg.src;
-        loaded = true;
+        video.currentTime = 0;
         video.muted = true;
         video.playsInline = true;
-        // Do NOT call play() here; user already triggered play
+        // Don't call play(); user already triggered
       }
     });
 
+    // Cleanup on ended
+    video.addEventListener('ended', function () {
+      if (video.hlsInstance) {
+        video.hlsInstance.destroy();
+        video.hlsInstance = null;
+      }
+    });
+
+    // Cleanup on pause (optional for memory)
+    video.addEventListener('pause', function () {
+      if (video.hlsInstance) {
+        video.hlsInstance.detachMedia();
+      }
+    });
+
+    // Error handling
     video.addEventListener('error', function (e) {
       console.error('Video error:', e);
     });
