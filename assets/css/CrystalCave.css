@@ -1,56 +1,3 @@
-:root {
-
-  /* colors */
-  --bg-dark: hsl(297 100% 3%);
-  --bg: hsl(300 100% 5%);
-  --bg-light: hsl(301 100% 8%);
-  --text: hsl(305 100% 98%);
-  --text-muted: hsl(304 41% 72%);
-  --highlight: hsl(301 62% 38%);
-  --border: hsl(300 100% 20%);
-  --border-muted: hsl(300 100% 12%);
-  --primary: hsl(303 84% 72%);
-  --secondary: hsl(140 65% 50%);
-  --danger: hsl(7 100% 66%);
-  --warning: hsl(53 100% 21%);
-  --success: hsl(162 100% 22%);
-  --info: hsl(217 100% 70%);
-
-  --text-reverse: hsl(297 100% 5%);
-
-  --primary-filter: invert(75%) sepia(29%) saturate(5237%) hue-rotate(259deg) brightness(92%) contrast(98%);
-  --highlight-filter: invert(20%) sepia(18%) saturate(6365%) hue-rotate(283deg) brightness(94%) contrast(88%);
-  /* typography */
-  --ff-Lato: 'Lato', sans-serif;
-
-  --fs-1: 3.5rem;
-  --fs-2: 3rem;
-  --fs-3: 2.4rem;
-  --fs-4: 2rem;
-  --fs-5: 1.8rem;
-  --fs-6: 1.3rem;
-
-  --fw-600: 600;
-  --fw-700: 700;
-
-  /* border radius */
-  --radius-5: 5px;
-  --radius-10: 10px;
-  --radius-15: 15px;
-  --radius-20: 20px;
-
-  /* spacing */
-  --section-padding: 60px;
-
-  /* shadow */
-  --shadow: 0 -3px 13px var(--border);
-
-  /* transition */
-  --transition-1: 0.05s ease;
-  --transition-2: 0.25s ease;
-  --cubic-out: cubic-bezier(0.33, 0.85, 0.56, 1.02);
-}
-
 @font-face {
   font-family: 'Lato';
   src: url('./assets/lato/Lato-Regular.ttf') format('truetype');
@@ -152,9 +99,7 @@ body {
   align-items: center;
   gap: 5px;
   margin-top: 1.5rem;
-  text-transform: uppercase;
   font-size: 1.6rem;
-  font-weight: var(--fw-600);
 }
 .More-link-container {
   text-align: right; /* pushes inline content to right */
@@ -163,7 +108,6 @@ body {
 .More-link-container a:focus {
   color: var(--highlight);
 }
-
 
 
 /* HEADER */
@@ -223,6 +167,20 @@ body {
   padding-block: 3px;
   transition: var(--transition-1);
 }
+
+.navbar-link-home {
+  color: var(--text);
+  font-family: var(--ff-Lato);
+  padding-block: 3px;
+  transition: var(--transition-1);
+}
+
+.navbar-link-home:is(:hover, :focus) { color: var(--primary); }
+.navbar .btn {
+  background-color: var(--primary);
+  margin-block-start: 15px;
+}
+
 .navbar-link:is(:hover, :focus) { color: var(--primary); }
 .navbar .btn {
   background-color: var(--primary);
@@ -231,7 +189,7 @@ body {
 
 /* introduction → INTRODUCTION */
 .introduction {
-  background-image: url("../images/banner5.png");
+  background-image: url("../images/CrystalCave/CrystalCaveProject.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -239,6 +197,35 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
+}
+
+.background-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.background-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/*.background-video video {
+  animation: fadeBlackThenFadeIn 2s 10s forwards;
+}
+*/
+
+.introduction > *:not(.background-video) {
+  position: relative;
+  z-index: 1;
 }
 
 .introduction-content {
@@ -266,10 +253,28 @@ body {
   gap: 10px;
 }
 
+/* ABOUT List */
+
+.game-info {
+    display: flex;
+    flex-direction: column; /* stack items vertically */
+    gap: 2px; /* spacing between rows */
+    margin-block-end: 45px;
+}
+
+.game-info-item {
+    display: flex;
+}
+
+.game-info-label {
+    width: 200px; /* fixed width to align all values */
+    font-weight: normal;
+}
+
+
 /* ABOUT */
 .about { padding-block-start: 120px; }
 .about-banner {
-  background-color: var(--bg);
   border-radius: var(--radius-10);
   margin-block-end: 30px;
 }
@@ -308,67 +313,95 @@ body {
   display: grid;
   gap: 45px;
 }
+
 .project-card {
-  background-color: var(--bg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  padding: 180px 20px;
-  border-radius: var(--radius-20);
+  position: relative;
+  display: block;
+  padding: 40px 40px 20px 40px; /* top, right, bottom, left */
+  border-radius: var(--radius-10);
   font-family: var(--ff-Lato);
   color: var(--text);
   font-weight: var(--fw-600);
   transition: var(--transition-2);
+  overflow: visible; /* allow controls to show */
+  text-decoration: none;
+  
+  min-height: 320px; /* ensures enough space for video and text */
 }
 
-.project-card:is(:hover, :focus) {
-  box-shadow: var(--shadow);
+.project-card .card-video {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-10);
+  z-index: 1;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Content above video */
+.project-card .card-content {
+  position: relative;
+  z-index: 1; /* ensures text appears above video */
 }
 
 .project-card .card-subtitle {
-  color: var(--primary);
+  color: var(--text);
   margin-block-end: 5px;
 }
+
 .project-card .card-title {
   max-width: 20ch;
   margin-block-end: 20px;
+}
+
+.project-card .card-title {
+  margin-block-start: 0; /* space above h3 */
+  margin-block-end: 20px; /* space below h3 */
 }
 
 .project-card .btn-link {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: var(--fs-6);
-  text-transform: uppercase;
+  font-size: var(--fs-4);
+}
+
+.card-title {
+  color: var(--primary);
+  font-size: var(--fs-4);
 }
 
 
-/* SKILLS */
-.skills .section-title { margin-block-end: 20px; }
-.skills .section-text { margin-block-end: 70px; }
-.skills-list {
+
+/* technologies */
+.technologies .section-title { margin-block-end: 20px; }
+.technologies .section-text { margin-block-end: 70px; }
+.technologies-list {
   display: grid;
   gap: 25px;
 }
-.skills-item .wrapper {
+.technologies-item .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-block-end: 10px;
 }
-.skills-title,
-.skills-data {
+.technologies-title,
+.technologies-data {
   color: var(--text);
   font-size: var(--fs-5);
   font-family: var(--ff-Lato);
   font-weight: var(--fw-600);
 }
-.skills-progress-box {
+.technologies-progress-box {
   background-color: var(--text);
   height: 8px;
   border-radius: var(--radius-10);
 }
-.skills-progress {
+.technologies-progress {
   background-color: var(--primary);
   height: 100%;
   border-radius: inherit;
@@ -494,7 +527,7 @@ body {
     padding-inline: 80px;
   }
   .project-card:is(:hover, :focus) { background-size: 130%; }
-  .skills-list {
+  .technologies-list {
     grid-template-columns: 1fr 1fr;
     column-gap: 50px;
   }
@@ -526,6 +559,7 @@ body {
     padding-block: 20px;
   }
   .navbar { all: unset; }
+
   .navbar-list {
     display: flex;
     align-items: center;
@@ -592,7 +626,7 @@ body {
   }
   .project-card .card-subtitle { font-size: var(--fs-5); }
   .project-card .btn-link { --fs-6: 1.6rem; }
-  .skills-list { column-gap: 100px; }
+  .technologies-list { column-gap: 100px; }
 
   /* Footer: center all content and stack secondary links below main links with spacing */
   .footer .container {

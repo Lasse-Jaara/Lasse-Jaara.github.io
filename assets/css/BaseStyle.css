@@ -1,0 +1,103 @@
+:root {
+  /* Colors */
+  --bg-dark: hsl(297 100% 3%);
+  --bg: hsl(300 100% 5%);
+  --bg-light: hsl(301 100% 8%);
+  --text: hsl(305 100% 98%);
+  --text-muted: hsl(304 41% 72%);
+  --highlight: hsl(301 62% 38%);
+  --border: hsl(300 100% 20%);
+  --border-muted: hsl(300 100% 12%);
+  --primary: hsl(303 84% 72%);
+  --secondary: hsl(140 65% 50%);
+  --danger: hsl(7 100% 66%);
+  --warning: hsl(53 100% 21%);
+  --success: hsl(162 100% 22%);
+  --info: hsl(217 100% 70%);
+  
+  --text-reverse: hsl(297 100% 5%);
+
+  --primary-filter: invert(75%) sepia(29%) saturate(5237%) hue-rotate(259deg) brightness(92%) contrast(98%);
+  --highlight-filter: invert(20%) sepia(18%) saturate(6365%) hue-rotate(283deg) brightness(94%) contrast(88%);
+
+  /* Typography */
+  --ff-Lato: 'Lato', sans-serif;
+  --fs-1: 3.5rem;
+  --fs-2: 3rem;
+  --fs-3: 2.4rem;
+  --fs-4: 2rem;
+  --fs-5: 1.8rem;
+  --fs-6: 1.3rem;
+  --fw-600: 600;
+  --fw-700: 700;
+
+  /* Border radius */
+  --radius-5: 5px;
+  --radius-10: 10px;
+  --radius-15: 15px;
+  --radius-20: 20px;
+
+  /* Spacing */
+  --section-padding: 60px;
+
+  /* Shadow */
+  --shadow: 0px 0px 13px var(--primary);
+
+  --shadow-primary: 0px 0px 13px var(--primary);
+  
+  /* Transition */
+  --transition-1: 0.05s ease;
+  --transition-2: 0.25s ease;
+  --cubic-out: cubic-bezier(0.33, 0.85, 0.56, 1.02);
+}
+
+.svg-colored {
+  filter: var(--primary-filter);
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/lato/Lato-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Base styles */
+html {
+  font-size: 10px;
+  font-family: var(--ff-Lato);
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-muted);
+  font-size: 1.6rem;
+  line-height: 1.6;
+  overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  height: auto;
+  display: block;
+}
+button {
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+input,
+textarea {
+  width: 100%;
+  background: none;
+  border: none;
+  font: inherit;
+}
